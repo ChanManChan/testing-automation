@@ -1,0 +1,4 @@
+* @ChanManChan
+*.js @ChanManChan
+*.yml @ChanManChan
+/public/ @ChanManChan
