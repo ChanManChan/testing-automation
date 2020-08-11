@@ -1,0 +1,22 @@
+name: "Open Github Issue"
+author: NandaGopal
+description: "Opens a github issue"
+inputs:
+  token:
+    description: "Github Token"
+    required: true
+  title:
+    description: "Issue Title"
+    required: true
+  body:
+    description: "Issue Body"
+  assignees:
+    description: "Issue Assignees"
+outputs:
+  # when we call the github API to create an issue, it will return an issue object as a response
+  issue: # id of output
+    description: "The issue object as a json string"
+runs:
+  # JS action, therefore node12
+  using: "node12"
+  main: "dist/index.js"
