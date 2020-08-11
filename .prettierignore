@@ -3,3 +3,4 @@ coverage
 node_modules
 package-lock.json
 commitlint.config.js
+.github/actions/hello/dist/index.js

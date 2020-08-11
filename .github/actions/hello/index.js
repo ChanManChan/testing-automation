@@ -2,6 +2,8 @@ const core = require("@actions/core");
 const github = require("@actions/github");
 
 try {
+  // simulate an error by throwing an error
+  throw new Error("testing action and workflow fail state");
   const name = core.getInput("who-to-greet");
   console.log(`Hello ${name}`);
 
