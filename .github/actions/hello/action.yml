@@ -1,0 +1,15 @@
+name: Greeting
+author: Nanda Gopal
+description: Greet the user
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: NandaGopal
+outputs:
+  time:
+    description: "The greeting time"
+runs:
+  # node12 because it's a JS action
+  using: "node12"
+  main: "dist/index.js"
