@@ -10,3 +10,4 @@ jobs:
           who-to-greet: "Nanda uberChan gopal"
       - run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
+          echo $HELLO
