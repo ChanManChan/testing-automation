@@ -21,6 +21,7 @@ jobs:
       #   with:
       #     who-to-greet: "NandaGopal Testing"
       - name: Send a Slack Message using PHP
+        if: always()
         uses: ./github/actions/slack
         with:
           slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
