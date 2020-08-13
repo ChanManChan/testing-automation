@@ -2,7 +2,7 @@
 
 # simulating error
 # non-zero exit code
-if [true]
+if [ true ]
 then
   echo 'error'
   exit 1
