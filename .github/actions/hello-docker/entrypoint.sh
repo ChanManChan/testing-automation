@@ -1,5 +1,14 @@
 #!/bin/sh -l
 
+# simulating error
+# non-zero exit code
+if [true]
+then
+  echo 'error'
+  exit 1
+fi
+
+
 # Equivalent logic in "actions/hello/index.js"
 #? core.debug("Debug message");
 #? core.warning("Warning message");
