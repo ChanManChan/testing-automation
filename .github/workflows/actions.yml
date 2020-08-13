@@ -20,17 +20,18 @@ jobs:
       #   id: hello
       #   with:
       #     who-to-greet: "NandaGopal Testing"
+      - name: Send a Slack Message using PHP
+        uses: ./github/actions/slack
+        with:
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+          message: Hello from PHP, Slack
       - name: Docker action
         if: always()
         uses: ./.github/actions/hello-docker
         id: hello
         with:
           who-to-greet: "NandaGopal Testing Docker action"
-      - name: Send a Slack Message using PHP
-        uses: ./github/actions/slack
-        with:
-          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
-          message: Hello from PHP, Slack
+
       - name: Outputs hardcoded value
         if: always()
         run: |
