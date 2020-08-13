@@ -11,18 +11,23 @@ jobs:
           title: Title
           body: Body
           assignees: |
-            alialaa
-            alialaa17
+            ChanManChan
+            NandaGopal1
+        continue-on-error: true
       - run: |
           echo ${{ steps.issue.outputs.issue }}
       # - uses: ./.github/actions/hello
       #   id: hello
       #   with:
       #     who-to-greet: "NandaGopal Testing"
-      - uses: ./.github/actions/hello-docker
+      - name: Docker action
+        if: always()
+        uses: ./.github/actions/hello-docker
         id: hello
         with:
           who-to-greet: "NandaGopal Testing Docker action"
-      - run: |
+      - name: Outputs hardcoded value
+        if: always()
+        run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
           echo $HELLO
