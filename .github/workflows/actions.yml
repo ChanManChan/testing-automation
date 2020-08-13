@@ -15,10 +15,14 @@ jobs:
             alialaa17
       - run: |
           echo ${{ steps.issue.outputs.issue }}
-      - uses: ./.github/actions/hello
+      # - uses: ./.github/actions/hello
+      #   id: hello
+      #   with:
+      #     who-to-greet: "NandaGopal Testing"
+      - uses: ./.github/actions/hello-docker
         id: hello
         with:
-          who-to-greet: "NandaGopal Testing"
+          who-to-greet: "NandaGopal Testing Docker action"
       - run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
           echo $HELLO

@@ -1,0 +1,21 @@
+name: Greeting
+author: Nanda Gopal
+description: Greet the user
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: NandaGopal
+outputs:
+  time:
+    description: "The greeting time"
+runs:
+  using: "docker"
+  # we can have an image from docker hub or
+  # image: "docker://image-name:tag-name"
+  # it can also be a Dockerfile in our action folder
+  image: "Dockerfile"
+  args:
+    # anything we pass in this array, will be passed to the Dockerfile as if it's a CMD
+    - ${{ inputs.who-to-greet }}
+# our input will be evaluated dynamically and then passed as an argument to our entrypoint so that we can use it in "Hello $1" in entrypoint.sh file
