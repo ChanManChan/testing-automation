@@ -4,7 +4,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/issue
+      - name: Custom issue creator action
+        uses: ./.github/actions/issue
         id: issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -13,9 +14,11 @@ jobs:
           assignees: |
             ChanManChan
             NandaGopal1
-      - run: |
+      - name: Output of issue creator
+        run: |
           echo  ${{ steps.issue.outputs.issue }}
-      - uses: ./.github/actions/hello
+      - name: Custom action
+        uses: ./.github/actions/hello
         id: hello
         with:
           who-to-greet: "Nanda uberChan gopal"
