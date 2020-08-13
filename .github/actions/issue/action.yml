@@ -10,10 +10,8 @@ inputs:
     required: true
   body:
     description: "Issue Body"
-    required: false
   assignees:
     description: "Issue Assignees"
-    required: false
 outputs:
   # when we call the github API to create an issue, it will return an issue object as a response
   issue: # id of output
