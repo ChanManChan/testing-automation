@@ -11,3 +11,5 @@ ENTRYPOINT [ "/entrypoint.sh" ]
 # these list of arguments will be passed to our entry point
 # we can't pass dynamic arguments with CMD
 # CMD []
+
+#! Don't forget to make entrypoint.sh file as an executable file
