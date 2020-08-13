@@ -4,11 +4,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Send a Slack Message using PHP
-        uses: ./github/actions/slack
-        with:
-          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
-          message: Hello from PHP, Slack
       - uses: ./.github/actions/issue
         id: issue
         with:
@@ -31,6 +26,11 @@ jobs:
         id: hello
         with:
           who-to-greet: "NandaGopal Testing Docker action"
+      - name: Send a Slack Message using PHP
+        uses: ./github/actions/slack
+        with:
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+          message: Hello from PHP, Slack
       - name: Outputs hardcoded value
         if: always()
         run: |
