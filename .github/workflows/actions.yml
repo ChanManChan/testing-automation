@@ -4,12 +4,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # - name: Send a Slack Message using PHP
-      #   if: always()
-      #   uses: ./github/actions/slack
-      #   with:
-      #     slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
-      #     message: Hello from PHP, Slack
+      - uses: ChanManChan/slack-PHP@v1
+        with:
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+          message: Hello from PHP, Slack
       - uses: ChanManChan/open-issue@v1
         id: issue
         with:
