@@ -10,7 +10,7 @@ jobs:
       #   with:
       #     slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
       #     message: Hello from PHP, Slack
-      - uses: ChanManChan/open-issue@v1
+      - uses: alialaa/issue-action@v1
         id: issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -27,11 +27,11 @@ jobs:
       #   with:
       #     who-to-greet: "NandaGopal Testing"
       # - name: Docker action
-        # if: always()
-        # uses: ./.github/actions/hello-docker
-        # id: hello
-        # with:
-          # who-to-greet: "NandaGopal Testing Docker action"
+      # if: always()
+      # uses: ./.github/actions/hello-docker
+      # id: hello
+      # with:
+      # who-to-greet: "NandaGopal Testing Docker action"
       - name: Outputs hardcoded value
         if: always()
         run: |
