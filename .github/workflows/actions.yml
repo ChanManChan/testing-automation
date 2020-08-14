@@ -10,7 +10,7 @@ jobs:
         with:
           slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
           message: Hello from PHP, Slack
-      - uses: ./.github/actions/issue
+      - uses: ChanManChan/open-issue@v1
         id: issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -37,3 +37,5 @@ jobs:
         run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
           echo $HELLO
+
+# https://github.com/actions/toolkit/blob/master/docs/action-versioning.md
