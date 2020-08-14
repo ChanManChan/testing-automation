@@ -45,4 +45,4 @@ echo "::endgroup::"
 
 #? core.exportVariable("HELLO", "hello");
 
-echo "::set-env name=HELLO::hello"
+echo "::set-env name=HELLO_DOC::hello-from-docker"

@@ -17,23 +17,22 @@ jobs:
           assignees: |
             ChanManChan
             NandaGopal1
-        continue-on-error: true
       - run: |
           echo ${{ steps.issue.outputs.issue }}
-      # - uses: ./.github/actions/hello
-      #   id: hello
-      #   with:
-      #     who-to-greet: "NandaGopal Testing"
-      # - name: Docker action
-      # if: always()
-      # uses: ./.github/actions/hello-docker
-      # id: hello
-      # with:
-      # who-to-greet: "NandaGopal Testing Docker action"
+      - uses: ./.github/actions/hello
+        id: hello
+        with:
+          who-to-greet: "NandaGopal Testing without Docker action"
+      - uses: ./.github/actions/hello-docker
+        id: hello_docker
+        with:
+          who-to-greet: "NandaGopal Testing with Docker action"
       - name: Outputs hardcoded value
-        if: always()
         run: |
+          echo "Time-doc: ${{ steps.hello_docker.outputs.time }}"
           echo "Time: ${{ steps.hello.outputs.time }}"
           echo $HELLO
+          echo $HELLO_DOC
 
 # https://github.com/actions/toolkit/blob/master/docs/action-versioning.md
+# https://github.com/actions/javascript-action
