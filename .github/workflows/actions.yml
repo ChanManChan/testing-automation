@@ -4,12 +4,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Send a Slack Message using PHP
-        if: always()
-        uses: ./github/actions/slack
-        with:
-          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
-          message: Hello from PHP, Slack
+      # - name: Send a Slack Message using PHP
+      #   if: always()
+      #   uses: ./github/actions/slack
+      #   with:
+      #     slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+      #     message: Hello from PHP, Slack
       - uses: ChanManChan/open-issue@v1
         id: issue
         with:
@@ -26,12 +26,12 @@ jobs:
       #   id: hello
       #   with:
       #     who-to-greet: "NandaGopal Testing"
-      - name: Docker action
-        if: always()
-        uses: ./.github/actions/hello-docker
-        id: hello
-        with:
-          who-to-greet: "NandaGopal Testing Docker action"
+      # - name: Docker action
+        # if: always()
+        # uses: ./.github/actions/hello-docker
+        # id: hello
+        # with:
+          # who-to-greet: "NandaGopal Testing Docker action"
       - name: Outputs hardcoded value
         if: always()
         run: |
