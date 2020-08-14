@@ -10,7 +10,7 @@ jobs:
       #   with:
       #     slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
       #     message: Hello from PHP, Slack
-      - uses: alialaa/issue-action@v1
+      - uses: ChanManChan/open-issue@v1
         id: issue
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
